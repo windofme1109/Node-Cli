@@ -1,0 +1,15 @@
+{
+  "name": "commander-chalk-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "pm": "bin/pm.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.3.0"
+  }
+}
