@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "bin": {
-    "pm": "bin/pm.js"
+    "pm": "bin/pm.js",
+    "pizza": "bin/pizza-option.js"
   },
   "keywords": [],
   "author": "",
