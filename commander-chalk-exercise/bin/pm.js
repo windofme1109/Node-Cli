@@ -33,3 +33,6 @@ program
 
 // 必须使用 parse 函数解析我们输入的命令
 program.parse(process.argv);
+
+console.log('Options: ', program.opts());
+console.log('command args: ', program.args);

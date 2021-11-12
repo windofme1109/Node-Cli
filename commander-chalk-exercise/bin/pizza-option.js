@@ -5,15 +5,40 @@ const {Command} = require('commander');
 const program = new Command();
 
 
+
+program.version('1.0.0');
+
+program
+    .name('pizza')
+//      .usage('<type> [option]')
+
 program
     .command('set <type>')
     .description('set pizza size')
+    .option('-f, --foo', 'enable some foo');
+    // .option('-d, --debug <d>', 'output extra debugging')
+    // .option('-s, --small <s>', 'small pizza size')
+    // .action((commandArgs, options, command) => {
+    //     console.log(command.args);
+    //     console.log(commandArgs);
+    //     console.log(options);
+    // })
 
-program
-    .option('-d, --debug', 'output extra debugging')
-    .option('-s, --small', 'small pizza size')
 
 
+
+program.showHelpAfterError('(add --help for additional information)')
+
+program.showSuggestionAfterError();
+
+const content = `
+
+for detail usage of one command:
+  $ pizza <command> --help
+`
+
+program.addHelpText('afterAll', content);
+//
 // program
 //     .option('-d, --debug', 'output extra debugging')
 //     .option('-s, --small', 'small pizza size')
@@ -43,29 +68,32 @@ program
 //     .option('-l, --letter [letters...]', 'specify letters');
 
 
-program
-    .on('option:debug', function() {
-        console.log('debug option event was emitted', this.opts());
-    })
-
-program
-    .on('option:small', function() {
-        console.log('small option event was emitted', this.opts());
-    })
-
-
-program
-    .on('command:set', function() {
-        console.log('command set event was emitted', this.args);
-    })
+// program
+//     .on('option:debug', function() {
+//         console.log('debug option event was emitted', this.opts());
+//     })
+//
+// program
+//     .on('option:small', function() {
+//         console.log('small option event was emitted', this.opts());
+//     })
+//
+//
+// program
+//     .on('command:set', function() {
+//         console.log('command set event was emitted', program.args);
+//     })
 
 // console.log(program.opts())
+
+
 
 program.parse(process.argv);
 
 // console.log('Options: ', program.opts());
-
-// 除去选项参数后，剩下的参数，可以认为是命令参数
+// console.log('command args: ', program.args);
+//
+// // 除去选项参数后，剩下的参数
 // console.log('Remaining arguments: ', program.args);
 
 
